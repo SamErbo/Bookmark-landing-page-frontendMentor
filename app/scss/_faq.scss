@@ -1,0 +1,58 @@
+.faq {
+  margin: 0 auto 124px;
+  max-width: 525px;
+
+  p {
+    padding: 29px 18px;
+  }
+  .tabs {
+    padding: 0 33px;
+    overflow: hidden;
+    .tab {
+      width: 100%;
+      text-align: start;
+      color: $veryDarkBlue;
+      border-top: 1px solid $grayishBlue;
+      padding: 27px 0 23px 0;
+
+      input {
+        opacity: 0;
+        z-index: -1;
+        position: absolute;
+        &:checked {
+          + label {
+            svg {
+              transform: rotate(180deg);
+              path {
+                stroke: $softRed;
+              }
+            }
+          }
+          ~ .tab__content {
+            display: block;
+            margin: 47px 0 34px;
+          }
+        }
+      }
+      label {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: $veryDarkBlue;
+        transition: all 0.35s;
+        &:hover {
+          color: $softRed;
+        }
+        svg {
+          transition: all 0.35s;
+        }
+      }
+      &__content {
+        display: none;
+        color: $grayishBlue;
+        transition: all 0.35s;
+      }
+    }
+  }
+}

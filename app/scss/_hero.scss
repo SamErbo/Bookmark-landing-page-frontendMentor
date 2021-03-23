@@ -1,0 +1,88 @@
+.hero {
+  &__section {
+    @include breakpoint-down(sm) {
+      // experimental
+      margin-top: 47px;
+
+      // end exp.
+    }
+
+    @include breakpoint-up(md) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "text img";
+    }
+    .hero {
+      &__img {
+        @include breakpoint-down(sm) {
+          //experimental
+          position: relative;
+          height: 311px;
+          width: 100%;
+
+          //end exp.img {
+          // width: 19.4375rem;
+          //exp
+          img {
+            width: 100%; //????
+            @include breakpoint-down(sm) {
+              position: absolute;
+              width: 100%;
+              top: auto;
+              z-index: 1;
+              left: 0;
+            }
+          }
+
+          &Bg {
+            //exp
+            @include breakpoint-down(sm) {
+              position: absolute;
+              right: 0;
+              background: $softBlue;
+              z-index: 0;
+              border-bottom-left-radius: 70px;
+              height: 203px;
+              top: 53px;
+              width: 291px;
+            }
+          }
+
+          @include breakpoint-up(sm) {
+            grid-area: img;
+            max-width: 100%;
+          }
+          @include breakpoint-up(md) {
+            width: 577px;
+          }
+        }
+      }
+      &__body {
+        margin: 0 auto 56px;
+        padding: 0 3rem;
+        @include breakpoint-up(sm) {
+          padding: 0 6rem;
+          margin-bottom: 100px;
+        }
+        @include breakpoint-up(md) {
+          grid-area: text;
+          text-align: left;
+          margin-bottom: 158px;
+        }
+        @include breakpoint-up(lg) {
+          padding: 0 4rem 0 164px;
+        }
+      }
+
+      &__btns {
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        @include breakpoint-down(md) {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

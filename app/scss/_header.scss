@@ -1,0 +1,103 @@
+header {
+  .navbar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    margin: 2.5rem 2.125rem;
+
+    @include breakpoint-up(xl) {
+      margin: 3.5rem 10.6875rem 0 10.3125rem;
+      padding: 0;
+    }
+    @include breakpoint-up(md) {
+      margin-bottom: 115px;
+    }
+    @include breakpoint-up(lg) {
+      padding-left: 171px;
+      padding-right: 165px;
+    }
+    .logo {
+      grid-column: 1/2;
+      justify-self: start;
+
+      height: 1.625rem;
+      width: 9.25rem;
+    }
+
+    img {
+      height: 0.9375rem;
+      width: 1.125rem;
+    }
+
+    .nav {
+      display: none;
+      grid-column: 2/4;
+      justify-self: end;
+      @include breakpoint-up(sm) {
+        display: flex;
+      }
+
+      &__menu {
+        grid-column: 3/4;
+        justify-self: end;
+      }
+      &__logo {
+        justify-self: start;
+      }
+      &__list {
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        @include breakpoint-up(sm) {
+          display: flex;
+        }
+      }
+
+      a {
+        font-size: $font-sm; //0.5625rem;
+        text-transform: uppercase;
+        color: $veryDarkBlue;
+        transition: color 300ms ease-in-out;
+        margin-right: 3.125rem;
+        &:hover {
+          color: $softRed;
+        }
+        // just for experimentation purpose
+        @include breakpoint-down(sm) {
+          font-size: 0.5625rem;
+        }
+      }
+    }
+  }
+}
+
+// .overlay {
+//   // margin: 2.5rem 2.125rem;
+//   top: 0;
+//   left: 0;
+//   z-index: 5;
+//   width: 100%;
+//   height: 100vh;
+//   background-color: rgba(126, 15, 15, 0.5);
+//   position: fixed;
+
+//   @include breakpoint-up(sm) {
+//     display: none;
+//   }
+// }
+
+.bookmark-text,
+.bookmark-circle {
+  fill: #fff;
+}
+
+.bookmark-circle-inner {
+  fill: $veryDarkBlue;
+}
+
+.display-n {
+  display: none;
+}
+.display-b {
+  display: block;
+}

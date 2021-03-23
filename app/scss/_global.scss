@@ -1,0 +1,136 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.43;
+  font-family: "Rubik", sans-serif;
+  font-size: $font-md;
+  font-weight: 400;
+  text-align: center;
+  color: $veryDarkBlue;
+}
+
+a,
+a:hover,
+a:visited {
+  text-decoration: none;
+  transition: all 300ms ease-in-out;
+}
+
+h1 {
+  font-size: $font-xl;
+  @include breakpoint-up(md) {
+    font-size: $font-xxl;
+  }
+}
+
+h2 {
+  font-size: $font-lg;
+  @include breakpoint-up(sm) {
+    font-size: $font-xl;
+  }
+}
+
+h3 {
+  font-size: $font-md;
+}
+
+p {
+  margin: 0;
+  color: $grayishBlue;
+  @include breakpoint-up(sm) {
+    font-size: $font-md;
+  }
+}
+
+ul {
+  list-style: none;
+}
+// Flexbox
+.flex {
+  display: flex;
+}
+
+// Buttons
+.btn-1,
+.btn-2,
+.btn-3 {
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid;
+  border-radius: 0.25rem;
+  &:hover {
+    background-color: #fff;
+  }
+}
+.btn-1,
+.btn-2 {
+  color: #fff;
+}
+
+.btn-2,
+.btn-3 {
+  padding: 1.125rem;
+  font-size: $font-ssm;
+  transition: 300ms all ease-in-out;
+}
+.btn-1 {
+  margin: 0;
+  border: 0.125rem solid $softRed;
+  padding: 0.875rem 2.125rem 0.8125rem;
+  background-color: $softRed;
+  transition: background-color 300ms linear, color 0.5s linear;
+  &:hover {
+    color: $softRed;
+  }
+}
+
+.btn-2 {
+  background-color: $softBlue;
+  &:hover {
+    color: $softBlue;
+    border: 2px solid $softBlue;
+  }
+  @include breakpoint-up(md) {
+    padding: 18px 24px;
+  }
+}
+
+.btn-3 {
+  color: $veryDarkBlue;
+  border: 2px solid #fff;
+  box-shadow: 0px 4px 11px -4px $softBlue;
+
+  &:hover {
+    color: $veryDarkBlue;
+    border: 2px solid $veryDarkBlue;
+  }
+}
+
+// Visibility
+.hide-for-mobile {
+  // hide for table and mobile
+  @include breakpoint-down(sm) {
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  //hide for desktop viewport widths
+  @include breakpoint-up(sm) {
+    display: none;
+  }
+}
+
+.container {
+  padding: 0 1.9375rem;
+}

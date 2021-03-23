@@ -1,0 +1,70 @@
+.extension {
+  &__header {
+    margin-bottom: 53px;
+    @include breakpoint-up(md) {
+      margin-bottom: 69px;
+    }
+    .header {
+      &__title {
+        margin-bottom: 25px;
+        @include breakpoint-up(md) {
+          margin-bottom: 40px;
+        }
+      }
+      &__body {
+        max-width: 550px;
+        padding: 0 47px;
+        margin: auto;
+      }
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    grid-gap: 1.5rem;
+    justify-items: center;
+    margin: 0 auto 161px;
+    padding: 0 3%;
+    @include breakpoint-down(md) {
+      margin-bottom: 145px;
+    }
+
+    @include breakpoint-up(lg) {
+      position: relative;
+      height: 455px;
+      width: 100%;
+    }
+    .card {
+      padding-top: 37px;
+      border-radius: 10px;
+      width: 280px;
+      box-shadow: 0px 8px 20px -4px $grayishBlue;
+      @include breakpoint-up(lg) {
+        position: absolute;
+      }
+
+      p {
+        padding: 0;
+        margin-bottom: 39px;
+      }
+      button {
+        margin: 24px 0 25px;
+      }
+    }
+    @include breakpoint-up(lg) {
+      .card-1 {
+        left: 16%;
+      }
+      .card-2 {
+        top: 34px;
+      }
+      .card-3 {
+        top: 87px;
+        right: 16%;
+      }
+    }
+  }
+}

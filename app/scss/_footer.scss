@@ -1,0 +1,78 @@
+footer {
+  font-size: $font-sm;
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 39px 0 42px 0;
+    background-color: $veryDarkBlue;
+
+    @include breakpoint-up(md) {
+      padding: 32px 165px;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+    }
+
+    .footer {
+      &__logo {
+        @include breakpoint-down(md) {
+          margin-bottom: 42px;
+        }
+        @include breakpoint-up(md) {
+          grid-column: 1/2;
+        }
+      }
+
+      &__links {
+        text-transform: uppercase;
+        @include breakpoint-down(md) {
+          margin-bottom: 38px;
+          flex-direction: column;
+        }
+        @include breakpoint-up(md) {
+          grid-column: 3/5;
+        }
+        a {
+          color: #fff;
+
+          &:hover {
+            color: $softRed;
+          }
+          @include breakpoint-down(md) {
+            &:not(:last-child) {
+              margin-bottom: 38px;
+            }
+          }
+
+          @include breakpoint-up(md) {
+            margin-right: 49px;
+          }
+        }
+      }
+      &__social {
+        @include breakpoint-up(md) {
+          grid-column: 6/8;
+          justify-self: end;
+        }
+
+        a {
+          &.fb {
+            margin-right: 41px;
+          }
+          &:hover {
+            path {
+              transition: all 0.3s ease-in-out;
+              fill: $softRed;
+            }
+          }
+        }
+      }
+    }
+  }
+  .attribution {
+    margin: 0;
+    font-size: $font-sm;
+    color: black;
+  }
+}
